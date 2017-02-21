@@ -23,3 +23,16 @@ Number to Money Format
 - Active module
 
 For field chage format in Manage Display
+## CSS ##
+```css
+.money-label {
+    margin-right: 5px;
+}
+.centavos {
+    font-size: 14px;
+    text-decoration: underline;
+    color: #797979;
+    vertical-align: super;
+    margin-left: 1px;
+}
+```
