@@ -27,8 +27,8 @@ function money_format_field_formatter_settings_form($field, $instance, $view_mod
     //Add your select box
     $element['current_money'] = array(
         '#type'           => 'select',
-        '#title'          => t('Format for price'),
-        '#description'    => t('Select format for price'), // Helper text
+        '#title'          => t('Money format'),
+        '#description'    => t('Select money format'),
         '#default_value'  => $settings['current_money'],
         '#options'        => array(
             'ud' => 'Similar to: USD 100',
@@ -49,9 +49,7 @@ function money_format_field_formatter_settings_form($field, $instance, $view_mod
  * Implements hook_field_formatter_settings_summary().
  */
 function money_format_field_formatter_settings_summary($field, $instance, $view_mode) {
-    $display = $instance['display'][$view_mode];
-    $settings = $display['settings'];
-    $summary = t('Select @format format for human',array('@format'=> $settings['current_money']));
+    $summary = t('Select money format');
     return $summary;
 }
 /**
@@ -147,7 +145,6 @@ function money_format_field_formatter_view($entity_type, $entity, $field, $insta
                 $element[$delta] = array('#markup' => $output);
             }
             break;
-
     }
     return $element;
 }
