@@ -6,9 +6,9 @@
 function money_format_field_formatter_info() {
     $formats = array(
         'money_format_current' => array(
-            'label' => t('Current money'),
-            'description' => t('Display price with current money'),
-            'field types' => array('number_float','list_float','number_decimal','number_integer'),
+            'label' => t('Money Format'),
+            'description' => t('Money format'),
+            'field types' => array('number_float','list_float','number_decimal','number_integer','text'),
             'settings'  => array(
                 'current_money' => 'ud',
             ),
@@ -73,70 +73,70 @@ function money_format_field_formatter_view($entity_type, $entity, $field, $insta
         case 'ud':
             foreach ($items as $delta => $item)
             {
-                $output = "<span class='label'>USD</span> " . money_format_split($item["value"]);
+                $output = "<span class='money-label'>USD</span>" . money_format_split($item["value"]);
                 $element[$delta] = array('#markup' => $output);
             }
             break;
         case 'db':
             foreach ($items as $delta => $item)
             {
-                $output = "<span class='label'>$</span> " . money_format_split($item["value"]);
+                $output = "<span class='money-label'>$</span>" . money_format_split($item["value"]);
                 $element[$delta] = array('#markup' => $output);
             }
             break;
         case 'fd':
             foreach ($items as $delta => $item)
             {
-                $output = "<span class='label'>USD $</span> " . money_format_split($item["value"]);
+                $output = "<span class='money-label'>USD $</span>" . money_format_split($item["value"]);
                 $element[$delta] = array('#markup' => $output);
             }
             break;
         case 'af':
             foreach ($items as $delta => $item)
             {
-                $output =  "" . money_format_split($item["value"]) . " <span class='label'>USD $</span>";
+                $output =  "" . money_format_split($item["value"]) . "<span class='money-label'>USD $</span>";
                 $element[$delta] = array('#markup' => $output);
             }
             break;
         case 'da':
             foreach ($items as $delta => $item)
             {
-                $output = "" . money_format_split($item["value"]) . " <span class='label'>$</span>";
+                $output = "" . money_format_split($item["value"]) . "<span class='money-label'>$</span>";
                 $element[$delta] = array('#markup' => $output);
             }
             break;
         case 'af':
             foreach ($items as $delta => $item)
             {
-                $output = "" . money_format_split($item["value"]) . " <span class='label'>USD $</span>";
+                $output = "" . money_format_split($item["value"]) . "<span class='money-label'>USD $</span>";
                 $element[$delta] = array('#markup' => $output);
             }
             break;
         case 'sb':
             foreach ($items as $delta => $item)
             {
-                $output = "<span class='label'>S/</span> ".$item["value"];
+                $output = "<span class='money-label'>S/</span>".$item["value"];
                 $element[$delta] = array('#markup' => $output);
             }
             break;
         case 'sa':
             foreach ($items as $delta => $item)
             {
-                $output = $item["value"]." <span class='label'>S/</span>";
+                $output = $item["value"]."<span class='money-label'>S/</span>";
                 $element[$delta] = array('#markup' => $output);
             }
             break;
         case 'eb':
             foreach ($items as $delta => $item)
             {
-                $output = "<span class='label'>€</span> ".$item["value"];
+                $output = "<span class='money-label'>€</span>".$item["value"];
                 $element[$delta] = array('#markup' => $output);
             }
             break;
         case 'eb':
             foreach ($items as $delta => $item)
             {
-                $output = $item["value"]." <span class='label'>€</span>";
+                $output = $item["value"]."<span class='money-label'>€</span>";
                 $element[$delta] = array('#markup' => $output);
             }
             break;
