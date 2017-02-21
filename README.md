@@ -1,10 +1,25 @@
-# Days to Day
+# Money Format
 Module for Drupal 7
-Convert a number to human day
-* example
-0.5 -> 1/2 Day
-1 -> Full Day
-2 -> 2 Days
-2 -> 2 D
-2 -> 2 D / 1 N
-2 -> 2 Days / 1 Night
+
+Number to Money Format
+
+## Example ##
+100.00
+```html
+<div class="field-item even"><span class="money-label">$</span>100<span class="centavos">.00</span></div>
+```
+
+100.00
+```html
+<div class="field-item even"><span class="money-label">USD $</span>100<span class="centavos">.00</span></div>
+```
+100.00
+```html
+<div class="field-item even"><span class="money-label">S/.</span>100<span class="centavos">.00</span></div>
+```
+### Install ###
+- Download module
+- unzip in <drupal_site>/sites/all/modules/money_format
+- Active module
+
+For field chage format in Manage Display
